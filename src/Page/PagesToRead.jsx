@@ -44,7 +44,7 @@ const PagesToRead = () => {
   }
 
   if (!readBooks.length) {
-    return <div>You have no books to read!</div>;
+    return <div className="md:px-24">You have no books to read!</div>;
   }
 
   const chartData = readBooks.map((book) => ({
