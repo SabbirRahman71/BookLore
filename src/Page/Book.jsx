@@ -70,7 +70,7 @@ const Book = () => {
             <span className="font-bold text-black">Review : </span>
             {review}
           </p>
-          <div className="flex gap-2 py-2">
+          <div className="flex flex-col md:flex-row gap-2 py-2">
             <span className="font-bold"> tag :</span>
             {tags.slice(0, 2).map((tag, index) => (
               <div
@@ -81,21 +81,21 @@ const Book = () => {
               </div>
             ))}
           </div>
-          <div className="flex gap-2 md:gap-8">
+          <div className="flex md:gap-8">
             <div className="text-gray-500">
               <p>Total pages:</p>
               <p>Publisher:</p>
-              <p>Year of publishing:</p>
+              <p>Published:</p>
               <p>Rating:</p>
             </div>
-            <div className="font-semibold text-black pl-16">
+            <div className="font-semibold text-black pl-4 md:pl-16">
               <p>{totalPages}</p>
               <p>{publisher}</p>
               <p>{yearOfPublishing}</p>
               <p>{rating}</p>
             </div>
           </div>
-          <div className="flex gap-4 mt-4">
+          <div className="flex flex-col md:flex-row gap-4 mt-4">
             <button
               onClick={addToRead}
               className={`btn ${

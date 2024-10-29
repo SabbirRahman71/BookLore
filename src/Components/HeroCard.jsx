@@ -13,7 +13,7 @@ const HeroCard = () => {
               <Link
                 to={"/listedBooks"}
                 href="#_"
-                className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0"
+                className="inline-flex items-center justify-center w-full px-6 md:py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0"
                 data-primary="green-400"
                 data-rounded="rounded-2xl"
                 data-primary-reset="{}"
@@ -38,7 +38,7 @@ const HeroCard = () => {
         <div className="relative flex-shrink-0">
           <figure className="overflow-hidden h-full">
             <img
-              className="h-40 md:h-80 w-full mx-14 object-cover rounded-l-lg"
+              className="h-40 md:h-80 w-full md:mx-14 object-cover rounded-l-lg"
               src="https://i.ibb.co/RBqyGS9/The-silent-patient.png"
               alt="The Silent Patient"
             />
