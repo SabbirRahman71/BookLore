@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { saveBookToRead, saveBookToWishlist } from "../Utils/Index"; // Adjust path as necessary
+import { saveBookToRead, saveBookToWishlist } from "../Utils/Index";
 
 const BookCards = ({ books }) => {
   const [sortOption, setSortOption] = useState("");
   const [sortedBooks, setSortedBooks] = useState(books);
 
-  // Sorting logic
   const sortBooks = (books, option) => {
     switch (option) {
       case "rating":
@@ -22,7 +21,6 @@ const BookCards = ({ books }) => {
     }
   };
 
-  // Function to handle sort changes
   const handleSortChange = (e) => {
     const option = e.target.value;
     setSortOption(option);
@@ -31,7 +29,7 @@ const BookCards = ({ books }) => {
   };
 
   useEffect(() => {
-    setSortedBooks(books); // Reset to original books when component mounts
+    setSortedBooks(books);
   }, [books]);
 
   return (

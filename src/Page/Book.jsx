@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { saveBookToRead, saveBookToWishlist, getBooks } from "../Utils/Index";
 
@@ -119,7 +118,6 @@ const Book = () => {
           </div>
         </div>
       </div>
-      <ToastContainer position="top-right" autoClose={2000} hideProgressBar />
     </div>
   );
 };
