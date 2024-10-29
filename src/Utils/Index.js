@@ -57,5 +57,5 @@ export const deleteBook = (bookId) => {
     JSON.stringify(wishlistBooks.filter((b) => b.bookId !== bookId))
   );
 
-  toast.success("Book removed from Read list and Wishlist!");
+  toast.success("Book removed successfully");
 };

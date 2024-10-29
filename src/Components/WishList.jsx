@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getBooks, deleteBook } from "../Utils/Index";
 
 const WishList = () => {
-  const { wishlistBooks } = getBooks();
+  const [wishlistBooks, setWishlistBooks] = useState([]);
+
+  useEffect(() => {
+    const { wishlistBooks: initialWishlistBooks } = getBooks();
+    setWishlistBooks(initialWishlistBooks);
+  }, []);
+
+  const handleDeleteBook = (bookId) => {
+    deleteBook(bookId);
+    setWishlistBooks((prevBooks) =>
+      prevBooks.filter((book) => book.bookId !== bookId)
+    );
+  };
 
   return (
     <div className="md:px-24">
@@ -32,7 +44,7 @@ const WishList = () => {
               <p>Rating: {book.rating}</p>
 
               <button
-                onClick={() => deleteBook(book.bookId)}
+                onClick={() => handleDeleteBook(book.bookId)}
                 className="btn bg-red-500 text-white mt-4"
               >
                 Remove
