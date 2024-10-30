@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const HeroCard = () => {
   return (
-    <div className="card card-side bg-base-200 shadow-xl md:mx-24 mx-auto rounded-lg overflow-hidden">
+    <div className="card card-side bg-base-300 shadow-xl mt-9 md:mx-24 mx-auto rounded-lg overflow-hidden">
       <div className="flex flex-between w-full md:gap-6 h-auto sm:h-80 md:h-96">
         <div className="card-body flex flex-col items-center justify-center p-10">
-          <h2 className="card-title text-3xl font-bold text-center">
+          <h2 className="card-title text-5xl leading-snug tracking-wide font-bold text-center font-playfair">
             Books to freshen up your bookshelf
           </h2>
           <div className="card-actions mt-4">
@@ -13,7 +13,7 @@ const HeroCard = () => {
               <Link
                 to={"/listedBooks"}
                 href="#_"
-                className="inline-flex items-center justify-center w-full px-6 md:py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0"
+                className="inline-flex items-center justify-center w-full px-4 md:py-3 mb-2 font-semibold text-white bg-green-500 rounded-md hover:bg-green-300 sm:w-auto sm:mb-0"
                 data-primary="green-400"
                 data-rounded="rounded-2xl"
                 data-primary-reset="{}"

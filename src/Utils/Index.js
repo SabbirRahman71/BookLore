@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+import "@fontsource/playfair-display";
 
 export const getBooks = () => ({
   readBooks: JSON.parse(localStorage.getItem("readBooks")) || [],

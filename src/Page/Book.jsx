@@ -46,9 +46,9 @@ const Book = () => {
   };
 
   return (
-    <div className="mt-8 md:mx-24">
-      <div className="card card-side bg-base-100 shadow-xl flex rounded-lg">
-        <div className="w-[50%] bg-gray-400 rounded-lg flex justify-center items-center">
+    <div className="mt-10 md:mx-24">
+      <div className="card card-side bg-base-100 shadow-xl flex flex-col md:flex-row rounded-lg">
+        <div className="w-auto h-auto min-w-[30%] bg-slate-200 rounded-lg flex justify-center items-center">
           <figure className="w-full h-full flex justify-center items-center">
             <img
               className="bg-transparent py-6 h-full object-contain"
@@ -57,29 +57,32 @@ const Book = () => {
             />
           </figure>
         </div>
-        <div className="card-body w-[50%] pt-0">
-          <h2 className="card-title font-bold text-4xl">{bookName}</h2>
+        <div className="card-body w-auto  mt-10 md:mt-0">
+          <h2 className="card-title font-playfair tracking-wide font-bold text-4xl">
+            {bookName}
+          </h2>
           <p className="font-semibold text-gray-600 py-2 text-xl">
             By : {author}
           </p>
-          <div className="border-y-2 py-4 border-gray-400">
-            <p className="text-gray-600 font-semibold text-xl">{category}</p>
+          <div className="border-y-2 py-4 border-gray-300">
+            <p className="text-gray-700 font-semibold text-xl">{category}</p>
           </div>
           <p className="pt-2 text-gray-500">
-            <span className="font-bold text-black">Review : </span>
+            <span className="font-bold text-gray-600">Review : </span>
             {review}
           </p>
-          <div className="flex flex-col md:flex-row gap-2 py-2">
-            <span className="font-bold"> tag :</span>
+
+          <div className="flex gap-2 my-6">
             {tags.slice(0, 2).map((tag, index) => (
               <div
                 key={index}
-                className="bg-green-100 text-green-600 cursor-pointer text-xs font-semibold px-2 py-1 rounded-full"
+                className="bg-green-100 text-green-600 cursor-pointer text-xs font-semibold px-2 py-1 rounded-full inline-block"
               >
                 #{tag}
               </div>
             ))}
           </div>
+
           <div className="flex md:gap-8">
             <div className="text-gray-500">
               <p>Total pages:</p>

@@ -1,8 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation(); // Detect route change
+
   return (
-    <div className="navbar bg-base-100 py-6 md:px-24">
+    <div className="navbar bg-base-100 my-6 md:px-24" key={location.pathname}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,17 +28,50 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  `transition-colors duration-200 ${
+                    isActive
+                      ? "border-2 border-green-500 text-green-500"
+                      : "text-black"
+                  }`
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/listedBooks"}>Listed Books</NavLink>
+              <NavLink
+                to={"/listedBooks"}
+                className={({ isActive }) =>
+                  `transition-colors duration-200 ${
+                    isActive
+                      ? "border-2 border-green-500 text-green-500"
+                      : "text-black"
+                  }`
+                }
+              >
+                Listed Books
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/pagesToRead"}>Pages To Read</NavLink>
+              <NavLink
+                to={"/pagesToRead"}
+                className={({ isActive }) =>
+                  `transition-colors duration-200 ${
+                    isActive
+                      ? "border-2 border-green-500 text-green-500"
+                      : "text-black"
+                  }`
+                }
+              >
+                Pages To Read
+              </NavLink>
             </li>
           </ul>
         </div>
-        <NavLink to={"/"} className="btn btn-ghost text-xl font-bold">
+        <NavLink to={"/"} className="btn btn-ghost text-2xl font-bold">
           BookLore
         </NavLink>
       </div>
@@ -46,7 +81,11 @@ const Navbar = () => {
             <NavLink
               to={"/"}
               className={({ isActive }) =>
-                isActive ? "border-2 border-green-500" : ""
+                `transition-colors duration-200 ${
+                  isActive
+                    ? "border-2 border-green-500 text-green-500"
+                    : "text-black"
+                }`
               }
             >
               Home
@@ -56,7 +95,11 @@ const Navbar = () => {
             <NavLink
               to={"/listedBooks"}
               className={({ isActive }) =>
-                isActive ? "border-2 border-green-500 " : ""
+                `transition-colors duration-200 ${
+                  isActive
+                    ? "border-2 border-green-500 text-green-500"
+                    : "text-black"
+                }`
               }
             >
               Listed Books
@@ -66,7 +109,11 @@ const Navbar = () => {
             <NavLink
               to={"/pagesToRead"}
               className={({ isActive }) =>
-                isActive ? "border-2 border-green-500" : ""
+                `transition-colors duration-200 ${
+                  isActive
+                    ? "border-2 border-green-500 text-green-500"
+                    : "text-black"
+                }`
               }
             >
               Pages To Read
